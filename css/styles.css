@@ -632,3 +632,18 @@ h1,h2,h3,.section-title,.preloader__mark,.wordmark,.hero__copy h1,.info-panel h1
 .hero.gallery .meta-done{display:block;min-height:1.4em}
 .hero.gallery .project-meta__text{min-height:0}
 .text-action--danger{color:var(--ink);border-bottom:2px solid var(--lyceum)}
+
+/* ===== v4: The Ethics of Using AI as Instructors ===== */
+.preloader__mark--long{font-size:clamp(28px,4.6vw,68px);line-height:.92;letter-spacing:-.04em}
+.wordmark{font-size:11px;line-height:1.05;max-width:190px}
+.hero__title--long{font-size:clamp(40px,4.9vw,82px)!important;line-height:.94!important;letter-spacing:-.045em!important}
+.info-title--long{font-size:clamp(36px,4.6vw,70px)!important;line-height:.95!important}
+.instructions{margin:22px 0 0;max-width:72ch}
+.instructions p{font-family:var(--serif);font-size:clamp(16px,1.35vw,19px);line-height:1.55;margin:0 0 12px}
+.instructions p:last-child{margin-bottom:0}
+.form-grid{margin-top:36px}
+.values-block{margin-top:48px;padding-top:36px;border-top:1px solid var(--hair)}
+.values-block .sub-title{font-size:clamp(20px,2vw,28px);line-height:1.2;letter-spacing:-.02em;max-width:60ch;font-family:var(--serif);font-weight:600}
+.values-block .seeds{margin-top:22px}
+.section--principles .sheet--commit{margin-top:48px}
+@media(max-width:600px){.wordmark{max-width:150px;font-size:10px}}

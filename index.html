@@ -4,16 +4,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <meta name="theme-color" content="#F8EDD9" />
-  <title>Cases in Practice — A faculty workshop on AI in teaching</title>
-  <meta name="description" content="A sixty-minute faculty workshop: nine case studies on AI in course design, assessment, and grading. Talk, type, or record your responses; everything stays on your device." />
+  <title>The Ethics of Using AI as Instructors — a faculty workshop</title>
+  <meta name="description" content="A faculty workshop: nine case studies on AI in course design, assessment, and grading. Talk, type, or record your responses; everything stays on your device." />
   <meta name="author" content="Marc Watkins, Emily Donahue, Danielle Clevenger" />
-  <meta property="og:title" content="Cases in Practice" />
-  <meta property="og:description" content="Nine case studies on AI in course design, assessment, and feedback. Talk them through, write your guiding principles, take your notes with you." />
+  <meta property="og:title" content="The Ethics of Using AI as Instructors" />
+  <meta property="og:description" content="Nine case studies on AI in course design, assessment, and feedback. Talk them through, name your duty of care, take your notes with you." />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mwatkins03-netizen.github.io/Ethical-AI-In-Course-Design-Workshop-Fable-5.1/" />
   <meta property="og:image" content="./assets/cards/step-02.svg" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&family=IBM+Plex+Serif:wght@400;600&display=swap" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&family=IBM+Plex+Serif:wght@400;600&display=swap" />
@@ -24,22 +22,21 @@
 
   <div id="preloader" class="preloader" aria-hidden="true">
     <div class="preloader__eyebrow">FACULTY WORKSHOP</div>
-    <div class="preloader__mark">CASES<br><strong>IN</strong> PRACTICE</div>
+    <div class="preloader__mark preloader__mark--long">THE ETHICS OF<br>USING AI<br><strong>AS INSTRUCTORS</strong></div>
     <div class="preloader__bar"><span></span></div>
   </div>
 
   <div class="grain" aria-hidden="true"></div>
 
   <header class="site-header">
-    <a href="#top" class="wordmark ui-button" aria-label="Cases in Practice, back to top">
-      <span>CASES <strong>IN</strong><br>PRACTICE</span><small>faculty workshop</small>
+    <a href="#top" class="wordmark ui-button" aria-label="The Ethics of Using AI as Instructors, back to top">
+      <span>THE ETHICS OF USING AI<br><strong>AS INSTRUCTORS</strong></span><small>faculty workshop</small>
     </a>
     <nav aria-label="Primary">
       <a class="nav-link" href="#choose">Start</a>
-      <a class="nav-link" href="#agenda">Agenda</a>
       <a class="nav-link" href="#step-cases">Cases</a>
-      <a class="nav-link" href="#step-principles">Principles</a>
-      <button id="facilitatorButton" class="nav-link ui-button" type="button">Facilitator guide</button>
+      <a class="nav-link" href="#step-takeaways">Takeaways</a>
+      <a class="nav-link" id="slidesLink" href="#" target="_blank" rel="noopener">Slides <span aria-hidden="true">↗</span><span class="visually-hidden">(opens in a new tab)</span></a>
       <button id="aboutButton" class="nav-link nav-link--disclosure ui-button" type="button"><span aria-hidden="true">AI</span> About, accessibility &amp; AI disclosure</button>
       <span class="local-chip" title="Nothing you write or record is sent anywhere"><i aria-hidden="true"></i>Stored on your device only</span>
       <button id="motionToggle" class="motion-toggle ui-button" type="button" aria-pressed="true"><span class="motion-toggle__dot" aria-hidden="true"></span><span id="motionLabel">Motion on</span></button>
@@ -58,10 +55,10 @@
       </div>
       <div class="hero__copy">
         <p class="eyebrow">AI INSTITUTE &amp; CETL · UNIVERSITY OF MISSISSIPPI</p>
-        <h1 id="heroTitle">Cases <strong>in</strong><br>Practice</h1>
+        <h1 id="heroTitle" class="hero__title--long">The Ethics of Using AI <strong>as Instructors</strong></h1>
         <p class="lead" id="heroDek"></p>
         <p class="local-badge"><span class="local-badge__lock" aria-hidden="true"></span><strong id="localBadge"></strong><span>No server, no accounts, no analytics. Export a file at the end if you want to keep it.</span></p>
-        <p class="hero__hint">The five illustrated cards below are the workshop. Drag them, use Shift+scroll, or Tab to a card and use the arrow keys; open one to jump to that step.</p>
+        <p class="hero__hint">The four illustrated cards below are the workshop. Drag them, use Shift+scroll, or Tab to a card and use the arrow keys; open one to jump to that step.</p>
       </div>
       <canvas id="glCanvas" aria-hidden="true"></canvas>
       <div id="fallbackGallery" class="fallback-gallery" aria-hidden="true"></div>
@@ -69,7 +66,7 @@
       <div id="projectMeta" class="project-meta-layer" aria-hidden="true"></div>
       <p class="gallery-instruction" aria-hidden="true"><span>Drag · shift+scroll · arrow keys</span><i></i></p>
       <div class="gallery-progress" aria-hidden="true"><span id="deckFill"></span></div>
-      <p id="deckCounter" class="gallery-counter" aria-live="polite">Step 01 of 05</p>
+      <p id="deckCounter" class="gallery-counter" aria-live="polite">Step 01 of 04</p>
       <p class="gallery-credit">Created by <strong>Marc Watkins, Emily Donahue &amp; Danielle Clevenger</strong> · AI Institute &amp; CETL, University of Mississippi</p>
     </section>
 
@@ -78,69 +75,49 @@
       <div class="section__inner">
         <p class="eyebrow reveal">BEFORE WE START · TWO QUICK CHOICES</p>
         <h2 id="chooseTitle" class="section-title reveal">Pick <strong>your topic</strong></h2>
-        <p class="lead reveal">Sit at the table for the topic you care most about. Your pick tints the site, chooses your three case studies, and is remembered on this device.</p>
+        <p class="lead reveal" id="seatingLine"></p>
         <div class="table-grid" id="tablePicker" role="group" aria-label="Pick your topic"></div>
         <div class="respond-block" id="respond">
           <h3 id="respondTitle" class="sub-title reveal">How will you <strong>respond</strong>?</h3>
-          <p class="sub-lead reveal">Every prompt works three ways. Pick a default; switch on any single prompt later.</p>
+          <p class="sub-lead reveal">Every prompt works three ways. Quiet tables can type or record; talking tables use the paper provided. Pick a default; switch on any single prompt later.</p>
           <div class="mode-grid mode-grid--compact" id="modePicker" role="group" aria-labelledby="respondTitle"></div>
           <p class="local-line reveal"><span class="local-badge__lock" aria-hidden="true"></span><strong>Stored on your device only.</strong> <span id="localLong"></span></p>
         </div>
       </div>
     </section>
 
-    <!-- ============ AGENDA ============ -->
-    <section id="agenda" class="section section--agenda" aria-labelledby="agendaTitle">
+    <!-- ============ STEP 1: CURIOSITIES AND CONCERNS ============ -->
+    <section id="step-curiosities" class="section" aria-labelledby="curiositiesTitle">
       <div class="section__inner">
-        <div class="agenda-head">
-          <div><p class="eyebrow reveal">SIXTY MINUTES</p><h2 id="agendaTitle" class="section-title reveal">The agenda,<br><strong>and where you are in it</strong></h2></div>
-          <button id="timerToggle" class="text-action reveal" type="button" aria-pressed="false">Show facilitator timers</button>
-        </div>
-        <ol id="agendaList" class="agenda-list agenda-list--compact"></ol>
-        <details class="rules-details reveal">
-          <summary><span class="eyebrow">DISCUSSION GROUND RULES</span><span class="rules-details__title">How we talk today</span></summary>
-          <ul id="groundRules" class="rules"></ul>
-        </details>
-        <p id="timerStatus" class="visually-hidden" role="status"></p>
-      </div>
-    </section>
-
-    <!-- ============ STEP 1: TABLE ============ -->
-    <section id="step-tables" class="section" aria-labelledby="tablesTitle">
-      <div class="section__inner">
-        <p class="eyebrow reveal">STEP ONE · 10 MINUTES</p>
-        <h2 id="tablesTitle" class="section-title reveal">Your table,<br><strong>your starting point</strong></h2>
-        <p class="lead reveal">Introduce yourself. Then, before anyone reads a case, name what you are curious about and what worries you about your table’s topic.</p>
+        <p class="eyebrow reveal">STEP ONE</p>
+        <h2 id="curiositiesTitle" class="section-title reveal">Curiosities <strong>and Concerns</strong></h2>
+        <div class="instructions reveal" id="curiositiesInstructions"></div>
         <div class="form-grid">
           <div class="sheet reveal">
             <span class="tape" aria-hidden="true"></span>
             <label class="field"><span>Name <em>(optional)</em></span><input id="fName" type="text" autocomplete="name" data-key="name" /></label>
             <label class="field"><span>Department or discipline</span><input id="fDiscipline" type="text" data-key="discipline" /></label>
             <fieldset class="field field--radios">
-              <legend>Your role at the table</legend>
+              <legend>At your table you are…</legend>
               <div id="roleChoices" class="chips chips--select"></div>
             </fieldset>
             <p class="field-note" id="trackEcho"></p>
           </div>
           <div class="sheet sheet--tilt-r reveal response-pane" data-pane="starting">
             <div class="pane-head"><p class="eyebrow">YOUR RESPONSE</p><div class="mode-switch" data-switch role="group" aria-label="Response mode for this pane"></div></div>
-            <div data-response="curiosities" data-label="What are you curious about?" data-hint="What do you actually want to know about AI and this part of teaching?"></div>
-            <div data-response="concerns" data-label="What concerns you?" data-hint="What keeps you cautious: for students, for your workload, for your discipline?"></div>
+            <div data-response="curiosities" data-label="What are you curious about?" data-hint="Instructors’ use of AI, for your table’s topic or in general."></div>
+            <div data-response="concerns" data-label="What concerns you?" data-hint="For students, for your workload, for your discipline."></div>
           </div>
-        </div>
-        <div class="callout callout--blue reveal response-pane" data-pane="quick">
-          <p class="callout__label">Quick debrief · 5 minutes</p>
-          <p>Each table shares one curiosity and one concern with the room. Notetakers: catch what other tables say. You will want it for the principles step.</p>
-          <div data-response="debriefQuick" data-label="What did you hear from other tables?" data-hint="One line per table is plenty."></div>
         </div>
       </div>
     </section>
 
-    <!-- ============ STEP 2: CASES, SIDE BY SIDE ============ -->
+    <!-- ============ STEP 2: CASE STUDIES, SIDE BY SIDE ============ -->
     <section id="step-cases" class="section section--cases" aria-labelledby="casesTitle">
       <div class="section__inner">
-        <p class="eyebrow reveal">STEP TWO · 15 MINUTES</p>
-        <h2 id="casesTitle" class="section-title reveal">Three cases,<br><strong>side by side with your response</strong></h2>
+        <p class="eyebrow reveal">STEP TWO</p>
+        <h2 id="casesTitle" class="section-title reveal">Case <strong>Studies</strong></h2>
+        <div class="instructions reveal" id="casesInstructions"></div>
         <div class="track-tabs reveal" id="trackTabs" role="group" aria-label="Show case studies for a topic"></div>
         <p class="lead track-blurb reveal" id="trackBlurb"></p>
         <div class="case-tabs" id="caseTabs" role="group" aria-label="Choose a case"></div>
@@ -148,52 +125,47 @@
           <div class="compare__case" id="casePane"></div>
           <div class="compare__response response-pane" id="caseResponse" data-pane="case"></div>
         </div>
-      </div>
-    </section>
-
-    <!-- ============ STEP 3: DEBRIEF ============ -->
-    <section id="step-debrief" class="section" aria-labelledby="debriefTitle">
-      <div class="section__inner">
-        <p class="eyebrow reveal">STEP THREE · 15 MINUTES</p>
-        <h2 id="debriefTitle" class="section-title reveal">The longer debrief,<br><strong>across all three tables</strong></h2>
-        <p class="lead reveal">Tables report out. Listen for what repeats across course design, assessment, and feedback, and where the topics pull in different directions.</p>
-        <div class="sheet reveal response-pane" data-pane="debrief">
-          <div class="pane-head"><p class="eyebrow">YOUR RESPONSE</p><div class="mode-switch" data-switch role="group" aria-label="Response mode for this pane"></div></div>
-          <div class="form-grid form-grid--three form-grid--tight">
-            <div data-response="debriefInsight" data-label="One insight from my table" data-hint="What did your table land on?"></div>
-            <div data-response="debriefShift" data-label="One thing from another table that shifted my view" data-hint="A detail, an objection, a story…"></div>
-            <div data-response="debriefQuestion" data-label="A question I still have" data-hint="Unresolved is fine."></div>
-          </div>
+        <div class="callout callout--blue reveal response-pane" data-pane="debrief" style="margin-top:40px">
+          <p class="callout__label">Debrief · across all tables</p>
+          <p>Tables report out. Listen for what repeats across course design, assessment, and feedback, and where the topics pull apart.</p>
+          <div data-response="debriefNotes" data-label="What did you hear from other tables?" data-hint="One line per table is plenty."></div>
         </div>
       </div>
     </section>
 
-    <!-- ============ STEP 4: PRINCIPLES ============ -->
-    <section id="step-principles" class="section section--principles" aria-labelledby="principlesTitle">
+    <!-- ============ STEP 3: TAKEAWAYS, QUESTIONS, AND COMMITMENTS ============ -->
+    <section id="step-takeaways" class="section section--principles" aria-labelledby="takeawaysTitle">
       <div class="section__inner">
-        <p class="eyebrow reveal">STEP FOUR · 5 MINUTES · INDIVIDUAL</p>
-        <h2 id="principlesTitle" class="section-title reveal">Guiding principles<br><strong>you would actually follow</strong></h2>
-        <p class="lead reveal">Brainstorm values for your personal practice or a departmental policy around this issue. Write your own, or start from a seed and rewrite it in your words.</p>
-        <div class="seeds reveal">
-          <p class="eyebrow" id="seedsLabel">SEEDS · CLICK TO ADD, THEN EDIT</p>
-          <div id="seedChips" class="chips" role="group" aria-labelledby="seedsLabel"></div>
-        </div>
-        <ol id="principleList" class="principle-list" aria-label="Your principles"></ol>
-        <button id="addPrinciple" class="text-action" type="button">+ Add a principle</button>
-        <div class="sheet sheet--commit reveal response-pane" data-pane="commit">
+        <p class="eyebrow reveal">STEP THREE · ON YOUR OWN</p>
+        <h2 id="takeawaysTitle" class="section-title reveal">Takeaways, Questions, <strong>and Commitments</strong></h2>
+        <p class="lead reveal" id="takeawaysInstruction"></p>
+        <div class="sheet reveal response-pane" data-pane="duty">
           <span class="tape" aria-hidden="true"></span>
-          <div class="pane-head"><p class="eyebrow">YOUR RESPONSE</p><div class="mode-switch" data-switch role="group" aria-label="Response mode for this pane"></div></div>
-          <div data-response="commitment" data-label="One thing I will do differently this semester" data-hint="Small and specific beats grand."></div>
+          <div class="pane-head"><p class="eyebrow">DUTY OF CARE</p><div class="mode-switch" data-switch role="group" aria-label="Response mode for this pane"></div></div>
+          <div data-response="dutyOfCare" data-label="What is your “duty of care”?" data-hint="To students, to colleagues, to your discipline."></div>
+        </div>
+        <div class="values-block">
+          <h3 class="sub-title reveal" id="valuesTitle"></h3>
+          <div class="seeds reveal">
+            <p class="eyebrow" id="seedsLabel">SEEDS · CLICK TO ADD, THEN EDIT</p>
+            <div id="seedChips" class="chips" role="group" aria-labelledby="seedsLabel"></div>
+          </div>
+          <ol id="principleList" class="principle-list" aria-label="Your values and principles"></ol>
+          <button id="addPrinciple" class="text-action" type="button">+ Add a value or principle</button>
+        </div>
+        <div class="sheet sheet--commit reveal response-pane" data-pane="leaving">
+          <div class="pane-head"><p class="eyebrow">QUESTIONS</p><div class="mode-switch" data-switch role="group" aria-label="Response mode for this pane"></div></div>
+          <div data-response="leavingQuestions" data-label="What questions are you leaving with?" data-hint="Unresolved is fine."></div>
         </div>
       </div>
     </section>
 
-    <!-- ============ STEP 5: EXPORT ============ -->
+    <!-- ============ STEP 4: EXPORT ============ -->
     <section id="step-export" class="section section--export" aria-labelledby="exportTitle">
       <div class="section__inner">
-        <p class="eyebrow reveal">STEP FIVE · WRAP-UP</p>
+        <p class="eyebrow reveal">STEP FOUR · WRAP-UP</p>
         <h2 id="exportTitle" class="section-title reveal">Take it<br><strong>with you</strong></h2>
-        <p class="lead reveal">Your notes, case responses, recordings, and principles, bundled into one file you can open anywhere. Until you download it, the only copy is on this device.</p>
+        <p class="lead reveal">Your curiosities, case responses, recordings, duty of care, and principles, bundled into one file you can open anywhere. Until you download it, the only copy is on this device.</p>
         <div class="export-row reveal">
           <button id="exportHtml" class="btn btn--ink" type="button">Download my notes (HTML)</button>
           <button id="exportPdf" class="btn" type="button">Save as PDF / Print</button>
@@ -207,7 +179,7 @@
 
     <footer class="site-footer">
       <div class="section__inner">
-        <p>Created by <strong>Marc Watkins, Emily Donahue, and Danielle Clevenger</strong>, University of Mississippi. Presented by the AI Institute and the Center for Excellence in Teaching and Learning (CETL). Case studies and agenda by the workshop facilitators.</p>
+        <p>Created by <strong>Marc Watkins, Emily Donahue, and Danielle Clevenger</strong>, University of Mississippi. Presented by the AI Institute and the Center for Excellence in Teaching and Learning (CETL). Case studies, instructions, and questions by the workshop facilitators.</p>
         <p><button id="aboutButton2" class="text-action" type="button">About this site, accessibility statement &amp; full AI disclosure</button> · Static site. Everything you write or record is stored on your device only.</p>
       </div>
     </footer>
@@ -219,6 +191,7 @@
   </aside>
 
   <div id="transition" class="transition" aria-hidden="true"><div></div></div>
+  <p id="timerStatus" class="visually-hidden" role="status"></p>
   <script type="module" src="./js/app.js"></script>
 </body>
 </html>
