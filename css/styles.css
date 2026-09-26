@@ -647,3 +647,19 @@ h1,h2,h3,.section-title,.preloader__mark,.wordmark,.hero__copy h1,.info-panel h1
 .values-block .seeds{margin-top:22px}
 .section--principles .sheet--commit{margin-top:48px}
 @media(max-width:600px){.wordmark{max-width:150px;font-size:10px}}
+
+/* ===== topic menu inside Case Studies ===== */
+.topic-menu{margin:30px 0 26px;padding:22px 24px 24px;border:1px solid var(--hair);border-radius:12px;background:rgba(255,255,255,.4)}
+.topic-menu .sub-lead{margin:8px 0 0;font-size:15px;max-width:none}
+.table-grid--menu{margin-top:16px;gap:12px}
+.table-grid--menu .table-card{padding:14px 16px;grid-template-columns:auto 1fr auto;grid-template-rows:auto;align-items:center;border-radius:12px}
+.table-grid--menu .table-card__title{font-size:15px}
+.table-grid--menu .table-card__meta{font-size:11px;margin-top:3px}
+.table-grid--menu .table-card__pick{grid-column:auto;margin-top:0;font-size:9px;padding:7px 10px}
+.table-grid--menu .table-card__swatch{width:34px;height:34px;font-size:12px}
+.section--choose .mode-grid--compact{margin-top:32px}
+.section--choose .local-line{margin-top:26px}
+.case-tabs{margin-top:0}
+@media(max-width:980px){.table-grid--menu{grid-template-columns:1fr}}
+.table-grid .table-card.is-picked{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.table-grid .table-card.is-picked .table-card__meta{color:rgba(248,237,217,.75)}

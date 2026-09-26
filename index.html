@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&family=IBM+Plex+Serif:wght@400;600&display=swap" />
-  <link rel="stylesheet" href="./css/styles.css" />
+  <link rel="stylesheet" href="./css/styles.css?v=20260926a" />
 </head>
 <body>
   <a class="skip-link" href="#choose">Skip to the workshop</a>
@@ -34,6 +34,7 @@
     </a>
     <nav aria-label="Primary">
       <a class="nav-link" href="#choose">Start</a>
+      <a class="nav-link" href="#step-curiosities">Curiosities</a>
       <a class="nav-link" href="#step-cases">Cases</a>
       <a class="nav-link" href="#step-takeaways">Takeaways</a>
       <a class="nav-link" id="slidesLink" href="#" target="_blank" rel="noopener">Slides <span aria-hidden="true">↗</span><span class="visually-hidden">(opens in a new tab)</span></a>
@@ -70,19 +71,14 @@
       <p class="gallery-credit">Created by <strong>Marc Watkins, Emily Donahue &amp; Danielle Clevenger</strong> · AI Institute &amp; CETL, University of Mississippi</p>
     </section>
 
-    <!-- ============ BEFORE WE START: topic + response mode ============ -->
-    <section id="choose" class="section section--choose" aria-labelledby="chooseTitle">
+    <!-- ============ BEFORE WE START: how will you respond ============ -->
+    <section id="choose" class="section section--choose" aria-labelledby="respondTitle">
       <div class="section__inner">
-        <p class="eyebrow reveal">BEFORE WE START · TWO QUICK CHOICES</p>
-        <h2 id="chooseTitle" class="section-title reveal">Pick <strong>your topic</strong></h2>
-        <p class="lead reveal" id="seatingLine"></p>
-        <div class="table-grid" id="tablePicker" role="group" aria-label="Pick your topic"></div>
-        <div class="respond-block" id="respond">
-          <h3 id="respondTitle" class="sub-title reveal">How will you <strong>respond</strong>?</h3>
-          <p class="sub-lead reveal">Every prompt works three ways. Quiet tables can type or record; talking tables use the paper provided. Pick a default; switch on any single prompt later.</p>
-          <div class="mode-grid mode-grid--compact" id="modePicker" role="group" aria-labelledby="respondTitle"></div>
-          <p class="local-line reveal"><span class="local-badge__lock" aria-hidden="true"></span><strong>Stored on your device only.</strong> <span id="localLong"></span></p>
-        </div>
+        <p class="eyebrow reveal">BEFORE WE START</p>
+        <h2 id="respondTitle" class="section-title reveal">How will you <strong>respond</strong>?</h2>
+        <p class="lead reveal">Every prompt works three ways. Quiet tables can type or record; talking tables use the paper provided. Pick a default; switch on any single prompt later.</p>
+        <div class="mode-grid mode-grid--compact" id="modePicker" role="group" aria-labelledby="respondTitle"></div>
+        <p class="local-line reveal"><span class="local-badge__lock" aria-hidden="true"></span><strong>Stored on your device only.</strong> <span id="localLong"></span></p>
       </div>
     </section>
 
@@ -118,8 +114,11 @@
         <p class="eyebrow reveal">STEP TWO</p>
         <h2 id="casesTitle" class="section-title reveal">Case <strong>Studies</strong></h2>
         <div class="instructions reveal" id="casesInstructions"></div>
-        <div class="track-tabs reveal" id="trackTabs" role="group" aria-label="Show case studies for a topic"></div>
-        <p class="lead track-blurb reveal" id="trackBlurb"></p>
+        <div class="topic-menu reveal" id="topicMenu">
+          <p class="eyebrow" id="topicLabel">PICK YOUR TOPIC · YOUR TABLE’S CASES APPEAR BELOW</p>
+          <p class="sub-lead" id="seatingLine"></p>
+          <div class="table-grid table-grid--menu" id="tablePicker" role="group" aria-labelledby="topicLabel"></div>
+        </div>
         <div class="case-tabs" id="caseTabs" role="group" aria-label="Choose a case"></div>
         <div class="compare">
           <div class="compare__case" id="casePane"></div>
@@ -192,6 +191,19 @@
 
   <div id="transition" class="transition" aria-hidden="true"><div></div></div>
   <p id="timerStatus" class="visually-hidden" role="status"></p>
-  <script type="module" src="./js/app.js"></script>
+  <script>
+    // Boot guard: if the module script fails to load (stale cache, file:// open, blocked script), say so instead of showing dead buttons.
+    window.__ethicsBooted = false;
+    var showBoot = function () {
+      if (window.__ethicsBooted || document.getElementById('bootAlert')) return;
+      var b = document.createElement('div'); b.id = 'bootAlert'; b.setAttribute('role', 'alert');
+      b.style.cssText = 'position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:9999;max-width:min(640px,92vw);padding:14px 18px;border-radius:12px;background:#142142;color:#F8EDD9;font:14px/1.5 "IBM Plex Sans",Arial,sans-serif;box-shadow:0 20px 50px rgba(20,33,66,.35)';
+      b.innerHTML = '<strong>The workshop script did not load, so the buttons will not respond.</strong> ' + (location.protocol === 'file:' ? 'This page was opened straight from a folder; it needs to be served over http or https (for example the GitHub Pages address).' : 'Try a hard reload (Shift+Reload, or Cmd+Shift+R) to clear a stale copy.') + ' <button type="button" onclick="location.reload()" style="margin-left:10px;border:1px solid #F8EDD9;background:transparent;color:#F8EDD9;border-radius:99px;padding:6px 12px;font:inherit;cursor:pointer">Reload</button>';
+      document.body.appendChild(b);
+    };
+    setTimeout(showBoot, 6000);
+    window.addEventListener('error', function (e) { if (e && e.filename && /\/js\//.test(e.filename)) showBoot(); }, true);
+  </script>
+  <script type="module" src="./js/app.js?v=20260926a"></script>
 </body>
 </html>

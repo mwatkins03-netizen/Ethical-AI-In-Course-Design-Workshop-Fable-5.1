@@ -1,5 +1,5 @@
-import { site, tracks, caseQuestions, instructions, takeawayPrompts, principleSeeds, pages, responseModes, localOnly, disclosure, accessibility } from './data.js';
-import { CardRenderer } from './webgl.js';
+import { site, tracks, caseQuestions, instructions, takeawayPrompts, principleSeeds, pages, responseModes, localOnly, disclosure, accessibility } from './data.js?v=20260926a';
+import { CardRenderer } from './webgl.js?v=20260926a';
 
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
@@ -202,11 +202,11 @@ function pickTrack(id) {
   document.documentElement.style.setProperty('--accent', trackById(id).color);
   renderTablePicker(); viewTrack = id; renderTrackTabs(); renderCases(); echoTrack();
   $(`.table-card[data-track="${id}"]`)?.focus();
-  announce(`Topic picked: ${trackById(id).title}. Case studies updated.`);
+  announce(`Topic picked: ${trackById(id).title}. The three cases below are now for this topic.`);
 }
 function echoTrack() {
   const t = trackById(state.track);
-  $('#trackEcho').textContent = t ? `Your topic: ${t.title}. Change it any time under “Pick your topic.”` : 'You have not picked a topic yet. Choose one under “Pick your topic” so the case studies match your table.';
+  $('#trackEcho').textContent = t ? `Your topic: ${t.title}. Change it any time from the topic menu in Case Studies.` : 'Pick your topic from the menu at the top of Case Studies so the cases match your table.';
 }
 
 /* ================= response modes: talk / type / record ================= */
@@ -321,12 +321,7 @@ function attachRecorder(ta, key, label, slot) {
 
 /* ================= case studies: side by side ================= */
 let viewTrack = null;
-function renderTrackTabs() {
-  viewTrack = viewTrack || state.track || tracks[0].id;
-  $('#trackTabs').innerHTML = tracks.map(t => `<button class="track-tab" type="button" data-track="${t.id}" style="--c:${t.color}" aria-pressed="${viewTrack === t.id}"><i aria-hidden="true"></i>${esc(t.title)}${state.track === t.id ? ' · your topic' : ''}</button>`).join('');
-  $$('.track-tab').forEach(b => b.addEventListener('click', () => { viewTrack = b.dataset.track; renderTrackTabs(); renderCases(); $(`.track-tab[data-track="${viewTrack}"]`)?.focus(); }));
-  $('#trackBlurb').textContent = trackById(viewTrack).blurb;
-}
+function renderTrackTabs() { viewTrack = viewTrack || state.track || tracks[0].id; }
 const activeCaseOf = t => state.activeCase[t.id] || t.cases[0].id;
 function renderCases() {
   const t = trackById(viewTrack); const active = activeCaseOf(t);
@@ -475,6 +470,7 @@ $('#aboutButton').addEventListener('click', openAbout); $('#aboutButton2').addEv
 
 /* ================= init ================= */
 async function init() {
+  window.__ethicsBooted = true;
   if (state.track) document.documentElement.style.setProperty('--accent', trackById(state.track).color);
   createDom(); measure();
   try { renderer = new CardRenderer(canvas, pages); await renderer.load(); }
